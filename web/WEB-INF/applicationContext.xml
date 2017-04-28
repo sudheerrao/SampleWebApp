@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	    http://www.springframework.org/schema/aop 	    http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+
+    <!-- define the base package for auto-wiring -->
+    <context:component-scan base-package="sample.spring.framework"/>
+
+    <!-- Notation for Spring REST services -->
+    <mvc:annotation-driven/>
+
+    <!-- data source config -->
+
+    <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/TestDB"/>
+        <property name="username" value="root"/>
+        <property name="password" value="Database#21"/>
+    </bean>
+
+
+    <!-- Transaction Manager configurations -->
+
+    <bean name="txnManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="txnManager"/>
+
+    <!-- AspectJ Configurations - Primarily used here for Logging purposes -->
+
+    <aop:aspectj-autoproxy proxy-target-class="true">
+        <aop:include name="testAspect"/>
+    </aop:aspectj-autoproxy>
+
+    <bean id="testAspect" class="sample.spring.framework.pointcuts.MessageAspect"/>
+
+
+    <!-- Configurations required to support both XML and JSON request/response handling -->
+
+<!--    <bean id="jsonMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+    <bean id="xmlMessageConverter" class="org.springframework.http.converter.xml.Jaxb2RootEle   mentHttpMessageConverter"/>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonMessageConverter"/>
+                <ref bean="xmlMessageConverter"/>
+            </list>
+        </property>
+    </bean>-->
+
+</beans>

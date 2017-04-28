@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_samplewebapp" default="compile.module.samplewebapp">
+  <dirname property="module.samplewebapp.basedir" file="${ant.file.module_samplewebapp}"/>
+  
+  <property name="module.jdk.home.samplewebapp" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.samplewebapp" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.samplewebapp" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.samplewebapp" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="samplewebapp.output.dir" value="${module.samplewebapp.basedir}/target/classes"/>
+  <property name="samplewebapp.testoutput.dir" value="${module.samplewebapp.basedir}/target/test-classes"/>
+  
+  <path id="samplewebapp.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="samplewebapp.module.production.classpath">
+    <path refid="${module.jdk.classpath.samplewebapp}"/>
+    <path refid="library.spring_webflow-2.4.0.classpath"/>
+    <path refid="library.spring_web_services-2.0.2.classpath"/>
+    <path refid="library.org.springframework:spring-web:3.2.2.release.classpath"/>
+    <path refid="library.spring-4.3.7.release.classpath"/>
+    <path refid="library.spring_integration-4.0.3.classpath"/>
+    <path refid="library.spring_batch-2.2.6.classpath"/>
+    <path refid="library.aspectj:aspectjweaver:1.5.3.classpath"/>
+    <path refid="library.spring-integration-http-4.0.3.release.classpath"/>
+    <path refid="library.org.zkoss.zk:zkspring-webflow:3.0.classpath"/>
+    <path refid="library.mysql-connector-java-5.0.8-bin.classpath"/>
+    <path refid="library.org.aspectj:aspectjweaver:1.8.10.classpath"/>
+    <path refid="library.org.kie.modules:org-apache-commons-lang3:6.1.0.final.classpath"/>
+    <path refid="library.com.danidemi.jlubricant:jlubricant-apache-commons-collections:0.0.4.classpath"/>
+    <path refid="library.javax.inject:javax.inject-tck:1.classpath"/>
+    <path refid="library.org.springframework:spring-webmvc:4.3.7.release.classpath"/>
+    <path refid="library.jersey-2.2.classpath"/>
+  </path>
+  
+  <path id="samplewebapp.runtime.production.module.classpath">
+    <pathelement location="${basedir}/web/WEB-INF"/>
+    <pathelement location="${samplewebapp.output.dir}"/>
+    <path refid="library.tomcat_7.0.70.classpath"/>
+    <path refid="library.spring-4.3.7.release.classpath"/>
+    <path refid="library.spring_integration-4.0.3.classpath"/>
+    <path refid="library.spring_batch-2.2.6.classpath"/>
+    <path refid="library.aspectj:aspectjweaver:1.5.3.classpath"/>
+    <path refid="library.spring-integration-http-4.0.3.release.classpath"/>
+    <path refid="library.org.zkoss.zk:zkspring-webflow:3.0.classpath"/>
+    <path refid="library.mysql-connector-java-5.0.8-bin.classpath"/>
+    <path refid="library.org.aspectj:aspectjweaver:1.8.10.classpath"/>
+    <path refid="library.org.kie.modules:org-apache-commons-lang3:6.1.0.final.classpath"/>
+    <path refid="library.com.danidemi.jlubricant:jlubricant-apache-commons-collections:0.0.4.classpath"/>
+    <path refid="library.javax.inject:javax.inject-tck:1.classpath"/>
+    <path refid="library.jersey-2.2.classpath"/>
+  </path>
+  
+  <path id="samplewebapp.module.classpath">
+    <path refid="${module.jdk.classpath.samplewebapp}"/>
+    <pathelement location="${basedir}/web/WEB-INF"/>
+    <path refid="library.spring_webflow-2.4.0.classpath"/>
+    <path refid="library.spring_web_services-2.0.2.classpath"/>
+    <path refid="library.org.springframework:spring-web:3.2.2.release.classpath"/>
+    <pathelement location="${samplewebapp.output.dir}"/>
+    <path refid="library.tomcat_7.0.70.classpath"/>
+    <path refid="library.spring-4.3.7.release.classpath"/>
+    <path refid="library.spring_integration-4.0.3.classpath"/>
+    <path refid="library.spring_batch-2.2.6.classpath"/>
+    <path refid="library.aspectj:aspectjweaver:1.5.3.classpath"/>
+    <path refid="library.spring-integration-http-4.0.3.release.classpath"/>
+    <path refid="library.org.zkoss.zk:zkspring-webflow:3.0.classpath"/>
+    <path refid="library.mysql-connector-java-5.0.8-bin.classpath"/>
+    <path refid="library.org.aspectj:aspectjweaver:1.8.10.classpath"/>
+    <path refid="library.org.kie.modules:org-apache-commons-lang3:6.1.0.final.classpath"/>
+    <path refid="library.com.danidemi.jlubricant:jlubricant-apache-commons-collections:0.0.4.classpath"/>
+    <path refid="library.javax.inject:javax.inject-tck:1.classpath"/>
+    <path refid="library.org.springframework:spring-webmvc:4.3.7.release.classpath"/>
+    <path refid="library.jersey-2.2.classpath"/>
+  </path>
+  
+  <path id="samplewebapp.runtime.module.classpath">
+    <pathelement location="${basedir}/web/WEB-INF"/>
+    <path refid="library.spring_webflow-2.4.0.classpath"/>
+    <path refid="library.spring_web_services-2.0.2.classpath"/>
+    <path refid="library.org.springframework:spring-web:3.2.2.release.classpath"/>
+    <pathelement location="${samplewebapp.testoutput.dir}"/>
+    <pathelement location="${samplewebapp.output.dir}"/>
+    <path refid="library.tomcat_7.0.70.classpath"/>
+    <path refid="library.spring-4.3.7.release.classpath"/>
+    <path refid="library.spring_integration-4.0.3.classpath"/>
+    <path refid="library.spring_batch-2.2.6.classpath"/>
+    <path refid="library.aspectj:aspectjweaver:1.5.3.classpath"/>
+    <path refid="library.spring-integration-http-4.0.3.release.classpath"/>
+    <path refid="library.org.zkoss.zk:zkspring-webflow:3.0.classpath"/>
+    <path refid="library.mysql-connector-java-5.0.8-bin.classpath"/>
+    <path refid="library.org.aspectj:aspectjweaver:1.8.10.classpath"/>
+    <path refid="library.org.kie.modules:org-apache-commons-lang3:6.1.0.final.classpath"/>
+    <path refid="library.com.danidemi.jlubricant:jlubricant-apache-commons-collections:0.0.4.classpath"/>
+    <path refid="library.javax.inject:javax.inject-tck:1.classpath"/>
+    <path refid="library.org.springframework:spring-webmvc:4.3.7.release.classpath"/>
+    <path refid="library.jersey-2.2.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.samplewebapp">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.samplewebapp">
+    <patternset refid="excluded.from.module.samplewebapp"/>
+  </patternset>
+  
+  <path id="samplewebapp.module.sourcepath">
+    <dirset dir="${module.samplewebapp.basedir}">
+      <include name="src/main/java"/>
+      <include name="lib"/>
+    </dirset>
+  </path>
+  
+  <path id="samplewebapp.module.test.sourcepath">
+    <dirset dir="${module.samplewebapp.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.samplewebapp" depends="compile.module.samplewebapp.production,compile.module.samplewebapp.tests" description="Compile module SampleWebApp"/>
+  
+  <target name="compile.module.samplewebapp.production" depends="register.custom.compilers" description="Compile module SampleWebApp; production classes">
+    <mkdir dir="${samplewebapp.output.dir}"/>
+    <javac2 destdir="${samplewebapp.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.samplewebapp}/javac">
+      <compilerarg line="${compiler.args.samplewebapp}"/>
+      <bootclasspath refid="samplewebapp.module.bootclasspath"/>
+      <classpath refid="samplewebapp.module.production.classpath"/>
+      <src refid="samplewebapp.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.samplewebapp"/>
+    </javac2>
+    
+    <copy todir="${samplewebapp.output.dir}">
+      <fileset dir="${module.samplewebapp.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.samplewebapp.basedir}/lib">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.samplewebapp.tests" depends="register.custom.compilers,compile.module.samplewebapp.production" description="compile module SampleWebApp; test classes" unless="skip.tests">
+    <mkdir dir="${samplewebapp.testoutput.dir}"/>
+    <javac2 destdir="${samplewebapp.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.samplewebapp}/javac">
+      <compilerarg line="${compiler.args.samplewebapp}"/>
+      <bootclasspath refid="samplewebapp.module.bootclasspath"/>
+      <classpath refid="samplewebapp.module.classpath"/>
+      <src refid="samplewebapp.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.samplewebapp"/>
+    </javac2>
+    
+    <copy todir="${samplewebapp.testoutput.dir}">
+      <fileset dir="${module.samplewebapp.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.samplewebapp" description="cleanup module">
+    <delete dir="${samplewebapp.output.dir}"/>
+    <delete dir="${samplewebapp.testoutput.dir}"/>
+  </target>
+</project>
