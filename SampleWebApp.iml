@@ -32,6 +32,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/lib" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -58,16 +60,17 @@
     <orderEntry type="library" exported="" scope="TEST" name="org.powermock:powermock-module-junit4:1.6.6" level="project" />
     <orderEntry type="library" exported="" name="com.google.guava:guava:13.0.1" level="project" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Spring Integration-4.0.3" level="project" />
-    <orderEntry type="library" name="Spring Batch-2.2.6" level="project" />
-    <orderEntry type="library" name="aspectj:aspectjweaver:1.5.3" level="project" />
+    <orderEntry type="library" exported="" name="Spring Integration-4.0.3" level="project" />
+    <orderEntry type="library" exported="" name="Spring Batch-2.2.6" level="project" />
+    <orderEntry type="library" exported="" name="aspectj:aspectjweaver:1.5.3" level="project" />
     <orderEntry type="library" name="spring-integration-http-4.0.3.RELEASE" level="application" />
-    <orderEntry type="library" name="org.zkoss.zk:zkspring-webflow:3.0" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.0.8-bin" level="project" />
-    <orderEntry type="library" name="org.aspectj:aspectjweaver:1.8.10" level="project" />
-    <orderEntry type="library" name="org.kie.modules:org-apache-commons-lang3:6.1.0.Final" level="project" />
-    <orderEntry type="library" name="com.danidemi.jlubricant:jlubricant-apache-commons-collections:0.0.4" level="project" />
-    <orderEntry type="library" name="javax.inject:javax.inject-tck:1" level="project" />
-    <orderEntry type="library" name="Jersey-2.2" level="project" />
+    <orderEntry type="library" exported="" name="org.zkoss.zk:zkspring-webflow:3.0" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.0.8-bin" level="project" />
+    <orderEntry type="library" exported="" name="org.aspectj:aspectjweaver:1.8.10" level="project" />
+    <orderEntry type="library" exported="" name="org.kie.modules:org-apache-commons-lang3:6.1.0.Final" level="project" />
+    <orderEntry type="library" exported="" name="com.danidemi.jlubricant:jlubricant-apache-commons-collections:0.0.4" level="project" />
+    <orderEntry type="library" exported="" name="javax.inject:javax.inject-tck:1" level="project" />
+    <orderEntry type="library" exported="" name="Jersey-2.2" level="project" />
+    <orderEntry type="library" name="Spring-4.3.8.RELEASE" level="project" />
   </component>
 </module>
